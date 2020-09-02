@@ -2,11 +2,10 @@ language: bash
 
 dist: trusty
 sudo: required
-jobs:
-   include:
-           arch: amd64
-           arch: ppc64le
+arch: 
+  - amd64
+  - ppc64le
 services:
   - docker
 
-script: docker run -ti -v `pwd`:/parfait maven:3-jdk-8 /parfait/.ci.sh
+script: docker run -i -v `pwd`:/parfait maven:3-jdk-8 /parfait/.ci.sh
