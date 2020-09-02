@@ -9,5 +9,5 @@ services:
   - docker
 
 script: 
-  - if [ "$TRAVIS_ARCH" = "ppc64le" ]; then docker run -i --rm -v `pwd`:/parfait -w /parfait ajava8 mvn clean install /parfait/.ci.sh; fi
-  - if [ "$TRAVIS_ARCH" = "amd64" ]; then docker run -it -v `pwd`:/parfait maven:3-jdk-8 /parfait/.ci.sh; fi
+  - if [ "$TRAVIS_ARCH" = "ppc64le" ]; then sudo docker run -it --rm -v `pwd`:/parfait -w /parfait ajava8 mvn clean install /parfait/.ci.sh; fi
+  - if [ "$TRAVIS_ARCH" = "amd64" ]; then sudo docker run -it -v `pwd`:/parfait maven:3-jdk-8 /parfait/.ci.sh; fi
