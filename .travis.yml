@@ -4,9 +4,8 @@ dist: trusty
 sudo: required
 jobs:
    include:
-       arch:
-         - amd64
-         - ppc64le
+           arch: amd64
+           arch: ppc64le
 services:
   - docker
 
