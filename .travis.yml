@@ -8,4 +8,6 @@ arch:
 services:
   - docker
 
-script: docker run -i -v `pwd`:/parfait maven:3-jdk-8 /parfait/.ci.sh
+script: 
+   - if [ "$TRAVIS_ARCH" = "ppc64le" ]; then docker manifest annotate new-list-ref-name image-ref --os linux --arch ppc64le;docker manifest push new-list-ref-name; fi
+   - docker run -i -v `pwd`:/parfait maven:3-jdk-8 /parfait/.ci.sh
