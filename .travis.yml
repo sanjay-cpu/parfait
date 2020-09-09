@@ -9,4 +9,4 @@ services:
   - docker
 
 script: 
-  - docker run -it -v `pwd`:/parfait maven:3-jdk-8 /parfait/.ci.sh; fi
+  - docker run -t -v `pwd`:/parfait maven:3-jdk-8 /parfait/.ci.sh; fi
